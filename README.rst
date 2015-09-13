@@ -3,7 +3,7 @@ Django apptemplates
 ===================
 
 django-apptemplates is a Django template loader that allows you to load a
-template from a specific application.  By this you can to both extend and
+template from a specific application.  By this you can both extend and
 override a template at the same time.  The default Django loaders require
 you to copy the entire template you want to override, even if you only
 want to override one small block.
@@ -19,8 +19,14 @@ Template usage example (extend and override Django admin base template)::
 
 The part before the colon (``:``) is the Django app namespace.
 
-Setup
-=====
+Installation and Setup
+======================
+
+This package is available from PyPI_.  To install it simply execute: ::
+
+    $ pip install django-apptemplates
+
+.. _PyPI: https://pypi.python.org/pypi/django-apptemplates
 
 Settings (for Django 1.8+)
 --------------------------

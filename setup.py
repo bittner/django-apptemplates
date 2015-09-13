@@ -3,6 +3,7 @@ from setuptools import setup, find_packages
 
 version = '0.3'
 
+
 def read(fname):
     return open(join(dirname(__file__), fname)).read()
 
