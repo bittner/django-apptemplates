@@ -1,7 +1,7 @@
 from os.path import dirname, join
 from setuptools import setup, find_packages
 
-version = '0.3'
+version = '0.2.1'
 
 
 def read(fname):
