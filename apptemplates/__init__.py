@@ -1,32 +1,18 @@
 """
-Django template loader that allows you to load a template from a
-specific application. This allows you to both extend and override
-a template at the same time. The default Django loaders require you
-to copy the entire template you want to override, even if you only
-want to override one small block.
-
-Template usage example::
-
-    {% extends "admin:admin/base.html" %}
-
-Settings::
-
-    TEMPLATE_LOADERS = (
-        'django.template.loaders.filesystem.Loader',
-        'django.template.loaders.app_directories.Loader',
-        'apptemplates.Loader',
-    )
-
-Based on: http://djangosnippets.org/snippets/1376/
+Django template loader that allows you to load a template from a specific
+Django application.
 """
-
 from os.path import dirname, join, abspath
 
 from django.conf import settings
-from django.utils.importlib import import_module
 from django.template.loaders.filesystem import Loader as FilesystemLoader
+try:
+    from importlib import import_module
+except ImportError:  # Python < 2.7
+    from django.utils.importlib import import_module
 
 _cache = {}
+
 
 def get_app_template_dir(app_name):
     """Get the template directory for an application
@@ -61,7 +47,7 @@ class Loader(FilesystemLoader):
         The parent FilesystemLoader.load_template_source() will take care
         of the actual loading for us.
         """
-        if not ':' in template_name:
+        if ':' not in template_name:
             return []
         app_name, template_name = template_name.split(":", 1)
         template_dir = get_app_template_dir(app_name)
@@ -69,4 +55,3 @@ class Loader(FilesystemLoader):
             return [join(template_dir, template_name)]
         else:
             return []
-
