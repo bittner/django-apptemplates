@@ -1,7 +1,8 @@
+#!/usr/bin/env python
 from os.path import dirname, join
 from setuptools import setup, find_packages
 
-version = '0.2.1'
+version = '0.3'
 
 
 def read(fname):
@@ -19,17 +20,24 @@ setup(name='django-apptemplates',
           'Intended Audience :: Developers',
           'License :: OSI Approved :: MIT License',
           'Operating System :: OS Independent',
-          'Programming Language :: Python',
+          'Programming Language :: Python :: 2.4',
+          'Programming Language :: Python :: 2.5',
+          'Programming Language :: Python :: 2.6',
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3.2',
+          'Programming Language :: Python :: 3.3',
+          'Programming Language :: Python :: 3.4',
           'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
           'Topic :: Internet :: WWW/HTTP :: WSGI',
           'Topic :: Software Development :: Libraries :: Application Frameworks',  # noqa
           'Topic :: Software Development :: Libraries :: Python Modules',
       ],
-      keywords='django templates',
+      keywords='django,template,loader',
       author='Konrad Wojas',
-      author_email='konrad.wojas@jibecompany.com',
-      maintainer='Tomas Zulberti',
-      url='http://bitbucket.org/tzulberti/django-apptemplates/',
+      author_email='bitbucket@m.wojas.nl',
+      maintainer='Peter Bittner',
+      maintainer_email='django@bittner.it',
+      url='http://bitbucket.org/bittner/django-apptemplates/',
       license='MIT License',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,

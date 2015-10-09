@@ -10,17 +10,8 @@ want to override one small block.
 
 Based on: http://djangosnippets.org/snippets/1376/
 
-Usage
-=====
-
-Template usage example (extend and override Django admin base template)::
-
-    {% extends "admin:admin/base.html" %}
-
-The part before the colon (``:``) is the Django app namespace.
-
-Installation and Setup
-======================
+Installation, Setup and Use
+===========================
 
 This package is available from PyPI_.  To install it simply execute: ::
 
@@ -57,9 +48,44 @@ Settings (for Django < 1.8)
         'django.template.loaders.app_directories.Loader',
     )
 
+How To Use In Templates
+-----------------------
+
+Template usage example (extend and override Django admin base template)::
+
+    {% extends "admin:admin/base.html" %}
+
+The part before the colon (``:``) is called the Django app *namespace*.
+
 Alternatives
 ============
 
 * django-app-namespace-template-loader_ (supports empty namespaces)
 
 .. _django-app-namespace-template-loader: https://pypi.python.org/pypi/django-app-namespace-template-loader
+
+Authors and Maintainers
+=======================
+
+* `Peter Bittner <https://bitbucket.org/bittner/>`_ (current maintainer)
+* `Tomas Zulberti <https://bitbucket.org/tzulberti/>`_ (former maintainer)
+* `Konrad Wojas <https://bitbucket.org/wojas/>`_ (original author)
+
+Change Log
+==========
+
+0.0.1
+-----
+
+* Released as originally published on djangosnippets
+
+0.2
+---
+
+*Skipped to fix conflicting versioning in setup.py and the PyPI package*
+
+0.3
+---
+
+* Remove Django 1.9 deprecation warning of imports
+* Update README with instructions for Django 1.8+
