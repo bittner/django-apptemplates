@@ -84,7 +84,7 @@ Change Log
 
 *Skipped to fix conflicting versioning in setup.py and the PyPI package*
 
-0.3
+1.0
 ---
 
 * Remove Django 1.9 deprecation warning of imports
