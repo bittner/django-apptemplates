@@ -5,6 +5,7 @@ Django application.
 from os.path import dirname, join, abspath
 
 from django.conf import settings
+from django.template import Origin
 from django.template.loaders.filesystem import Loader as FilesystemLoader
 try:
     from importlib import import_module
@@ -52,6 +53,6 @@ class Loader(FilesystemLoader):
         app_name, template_name = template_name.split(":", 1)
         template_dir = get_app_template_dir(app_name)
         if template_dir:
-            return [join(template_dir, template_name)]
+            return [Origin(name=join(template_dir, template_name))]
         else:
             return []
