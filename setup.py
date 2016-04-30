@@ -2,7 +2,7 @@
 from os.path import dirname, join
 from setuptools import setup, find_packages
 
-version = '1.0'
+version = '1.1'
 
 
 def read(fname):
@@ -10,7 +10,7 @@ def read(fname):
 
 setup(name='django-apptemplates',
       version=version,
-      description='Django template loader that allows you to load and'
+      description='Django template loader that allows you to load and '
                   'override a template from a specific Django application.',
       long_description=read('README.rst'),
       classifiers=[
@@ -27,12 +27,13 @@ setup(name='django-apptemplates',
           'Programming Language :: Python :: 3.2',
           'Programming Language :: Python :: 3.3',
           'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: 3.5',
           'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
           'Topic :: Internet :: WWW/HTTP :: WSGI',
-          'Topic :: Software Development :: Libraries :: Application Frameworks',  # noqa
+          'Topic :: Software Development :: Libraries :: Application Frameworks',
           'Topic :: Software Development :: Libraries :: Python Modules',
       ],
-      keywords='django,template,loader',
+      keywords=['django', 'template', 'loader'],
       author='Konrad Wojas',
       author_email='bitbucket@m.wojas.nl',
       maintainer='Peter Bittner',
@@ -41,5 +42,4 @@ setup(name='django-apptemplates',
       license='MIT License',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
-      zip_safe=False,
-)
+      zip_safe=False)
