@@ -5,7 +5,7 @@ Django application.
 from os.path import dirname, join, abspath
 
 from django.conf import settings
-from django.template import Origin
+from django.template.base import Origin
 from django.template.loaders.filesystem import Loader as FilesystemLoader
 try:
     from importlib import import_module

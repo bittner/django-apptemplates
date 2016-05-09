@@ -29,7 +29,8 @@ Based on: http://djangosnippets.org/snippets/1376/
 Version Support
 ===============
 
-Python 2.4 through 3.5, and Django 1.3 through 1.9 are supported (as reported by users).
+Python 2.4 through 3.5, and Django 1.3 through 1.9 are supported (confirmed by
+primitive tests).
 
 Installation, Setup and Use
 ===========================
@@ -100,6 +101,13 @@ Authors and Maintainers
 
 Change Log
 ==========
+
+1.1.1
+-----
+
+* Fix ``ImportError`` for Django 1.8 (broken in release 1.1)
+* Add integration tests (test import of package across supported versions)
+* Add ``clean`` and ``test`` commands to ``setup.py``
 
 1.1
 ---

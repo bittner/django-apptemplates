@@ -1,7 +1,9 @@
 syntax: glob
 
+.cache/
+.tox/
 build/
 dist/
-*.egg/
+*.eggs/
 *.egg-info/
 *.pyc
