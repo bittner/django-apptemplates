@@ -7,7 +7,7 @@ from setuptools.command.test import test as TestCommand
 from shlex import split
 from shutil import rmtree
 
-version = '1.2.0.dev1'
+version = '1.2.0'
 
 
 class Tox(TestCommand):
@@ -101,8 +101,8 @@ setup(name='django-apptemplates',
       author_email='bitbucket@m.wojas.nl',
       maintainer='Peter Bittner',
       maintainer_email='django@bittner.it',
-      url='http://bitbucket.org/bittner/django-apptemplates/',
-      license='MIT License',
+      url='https://github.com/bittner/django-apptemplates',
+      license='MIT',
       include_package_data=True,
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       tests_require=['tox', 'virtualenv<14.0.0'],

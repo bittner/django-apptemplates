@@ -27,7 +27,7 @@ Based on: http://djangosnippets.org/snippets/1376/
    :target: https://pypi.python.org/pypi/django-apptemplates
 .. |license| image:: https://img.shields.io/pypi/l/django-apptemplates.svg
    :alt: Software license
-   :target: https://bitbucket.org/bittner/django-apptemplates/src/default/LICENSE.txt
+   :target: https://github.com/bittner/django-apptemplates/blob/master/LICENSE.txt
 
 Version Support
 ===============
@@ -99,9 +99,14 @@ Alternatives
 Authors and Maintainers
 =======================
 
-* `Peter Bittner <https://bitbucket.org/bittner/>`_ (current maintainer)
-* `Tomas Zulberti <https://bitbucket.org/tzulberti/>`_ (former maintainer)
-* `Konrad Wojas <https://bitbucket.org/wojas/>`_ (original author)
+* `Peter Bittner`_ (current maintainer)
+* `Tomas Zulberti`_ (former maintainer)
+* `Konrad Wojas`_ (original author)
+
+
+.. _Peter Bittner: https://bitbucket.org/bittner/django-apptemplates
+.. _Tomas Zulberti: https://bitbucket.org/tzulberti/django-apptemplates
+.. _Konrad Wojas: https://bitbucket.org/wojas/django-apptemplates
 
 Change Log
 ==========
@@ -112,6 +117,7 @@ Change Log
 * Reestablish support for Django 1.4 through 1.8 (broken since version 1.1)
 * Add tests for template rendering
 * Drop support for Django 1.3 (which cannot be confirmed by tests)
+* Drop support for Python 2.4 and 2.5 (which cannot be tested anymore)
 
 1.1.1
 -----
