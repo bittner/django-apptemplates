@@ -7,7 +7,7 @@ from setuptools.command.test import test as TestCommand
 from shlex import split
 from shutil import rmtree
 
-version = '1.2.0'
+version = '1.2'
 
 
 class Tox(TestCommand):
@@ -84,7 +84,6 @@ setup(name='django-apptemplates',
           'Intended Audience :: Developers',
           'License :: OSI Approved :: MIT License',
           'Operating System :: OS Independent',
-          'Programming Language :: Python :: 2.5',
           'Programming Language :: Python :: 2.6',
           'Programming Language :: Python :: 2.7',
           'Programming Language :: Python :: 3.2',
