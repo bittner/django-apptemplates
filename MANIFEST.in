@@ -1,0 +1,3 @@
+include README.rst
+exclude setup.cfg tests.py
+# prune apptemplates/test

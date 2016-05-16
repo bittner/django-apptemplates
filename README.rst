@@ -29,8 +29,7 @@ Based on: http://djangosnippets.org/snippets/1376/
 Version Support
 ===============
 
-Python 2.4 through 3.5, and Django 1.3 through 1.9 are supported (confirmed by
-primitive tests).
+Python 2.5 through 3.5, and Django 1.4 through 1.9 are supported.
 
 Installation, Setup and Use
 ===========================
@@ -101,6 +100,13 @@ Authors and Maintainers
 
 Change Log
 ==========
+
+1.2
+---
+
+* Reestablish support for Django 1.4 through 1.8 (broken since version 1.1)
+* Add tests for template rendering
+* Drop support for Django 1.3 (which cannot be confirmed by tests)
 
 1.1.1
 -----

@@ -3,20 +3,21 @@ Django template loader that allows you to load a template from a specific
 Django application.
 """
 from os.path import dirname, join, abspath
-
 from django.conf import settings
 from django.template.base import Origin
 from django.template.loaders.filesystem import Loader as FilesystemLoader
 try:
-    from importlib import import_module
+    from importlib import import_module  # noqa pylint: disable=wrong-import-order,no-name-in-module
 except ImportError:  # Python < 2.7
-    from django.utils.importlib import import_module
+    from django.utils.importlib import import_module  # noqa pylint: disable=no-name-in-module,import-error
+import django
 
 _cache = {}
 
 
 def get_app_template_dir(app_name):
-    """Get the template directory for an application
+    """
+    Get the template directory for an application
 
     We do not use django.db.models.get_app, because this will fail if an
     app does not have any models.
@@ -28,8 +29,8 @@ def get_app_template_dir(app_name):
     template_dir = None
     for app in settings.INSTALLED_APPS:
         if app.split('.')[-1] == app_name:
-            # Do not hide import errors; these should never happen at this point
-            # anyway
+            # Do not hide import errors; these should never happen at this
+            # point anyway
             mod = import_module(app)
             template_dir = join(abspath(dirname(mod.__file__)), 'templates')
             break
@@ -37,12 +38,25 @@ def get_app_template_dir(app_name):
     return template_dir
 
 
+if django.VERSION[:2] >= (1, 9):
+    def get_template_path(template_dir, template_name):
+        """Return Origin object with template file path"""
+        return Origin(name=join(template_dir, template_name))
+else:
+    def get_template_path(template_dir, template_name):
+        """Return template file path (for Django < 1.9)"""
+        return join(template_dir, template_name)
+
+
 class Loader(FilesystemLoader):
+    """
+    FilesystemLoader for templates of a Django app
+    """
     is_usable = True
 
     def get_template_sources(self, template_name, template_dirs=None):
         """
-        Returns the absolute paths to "template_name" in the specified app.
+        Return the absolute paths to "template_name" in the specified app
         If the name does not contain an app name (no colon), an empty list
         is returned.
         The parent FilesystemLoader.load_template_source() will take care
@@ -53,6 +67,6 @@ class Loader(FilesystemLoader):
         app_name, template_name = template_name.split(":", 1)
         template_dir = get_app_template_dir(app_name)
         if template_dir:
-            return [Origin(name=join(template_dir, template_name))]
+            return [get_template_path(template_dir, template_name)]
         else:
             return []

@@ -7,7 +7,7 @@ from setuptools.command.test import test as TestCommand
 from shlex import split
 from shutil import rmtree
 
-version = '1.1.1'
+version = '1.2.0.dev1'
 
 
 class Tox(TestCommand):
@@ -67,8 +67,9 @@ def rmtree_glob(file_glob):
                 pass
 
 
-def read_file(fname):
-    return open(join(dirname(__file__), fname)).read()
+def read_file(filename):
+    with open(join(dirname(__file__), filename)) as f:
+        return f.read()
 
 
 setup(name='django-apptemplates',
@@ -83,7 +84,6 @@ setup(name='django-apptemplates',
           'Intended Audience :: Developers',
           'License :: OSI Approved :: MIT License',
           'Operating System :: OS Independent',
-          'Programming Language :: Python :: 2.4',
           'Programming Language :: Python :: 2.5',
           'Programming Language :: Python :: 2.6',
           'Programming Language :: Python :: 2.7',
@@ -93,7 +93,7 @@ setup(name='django-apptemplates',
           'Programming Language :: Python :: 3.5',
           'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
           'Topic :: Internet :: WWW/HTTP :: WSGI',
-          'Topic :: Software Development :: Libraries :: Application Frameworks',
+          'Topic :: Software Development :: Libraries :: Application Frameworks',  # noqa
           'Topic :: Software Development :: Libraries :: Python Modules',
       ],
       keywords=['django', 'template', 'loader'],
@@ -105,7 +105,7 @@ setup(name='django-apptemplates',
       license='MIT License',
       include_package_data=True,
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
-      tests_require=['tox'],
+      tests_require=['tox', 'virtualenv<14.0.0'],
       cmdclass={
           'clean': Clean,
           'test': Tox,
