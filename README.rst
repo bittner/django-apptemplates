@@ -32,7 +32,8 @@ Based on: http://djangosnippets.org/snippets/1376/
 Version Support
 ===============
 
-Python 2.5 through 3.5, and Django 1.4 through 1.9 are supported.
+Python 2.6 through 3.5, and Django 1.4 through 1.9 are supported (verified by
+tests).
 
 Installation, Setup and Use
 ===========================
@@ -92,7 +93,8 @@ Alternatives
 * django-app-namespace-template-loader_ (supports empty namespaces)
 
 
-.. _django-app-namespace-template-loader: https://pypi.python.org/pypi/django-app-namespace-template-loader
+.. _django-app-namespace-template-loader:
+    https://pypi.python.org/pypi/django-app-namespace-template-loader
 
 Authors and Maintainers
 =======================
