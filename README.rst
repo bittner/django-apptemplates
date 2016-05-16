@@ -2,7 +2,7 @@
 Django apptemplates |latest-version|
 ====================================
 
-|python-support| |downloads| |license|
+|build-status| |python-support| |downloads| |license|
 
 django-apptemplates is a Django template loader that allows you to load a
 template from a specific application.  By this you can both extend and
@@ -16,6 +16,9 @@ Based on: http://djangosnippets.org/snippets/1376/
 .. |latest-version| image:: https://img.shields.io/pypi/v/django-apptemplates.svg
    :alt: Latest version on PyPI
    :target: https://pypi.python.org/pypi/django-apptemplates
+.. |build-status| image:: https://travis-ci.org/bittner/django-apptemplates.svg
+   :alt: Build status
+   :target: https://travis-ci.org/bittner/django-apptemplates
 .. |python-support| image:: https://img.shields.io/pypi/pyversions/django-apptemplates.svg
    :target: https://pypi.python.org/pypi/django-apptemplates
    :alt: Python versions
@@ -72,7 +75,7 @@ Settings (for Django < 1.8)
         'django.template.loaders.app_directories.Loader',
     )
 
-How To Use In Templates
+How to Use in Templates
 -----------------------
 
 Template usage example (extend and override Django admin base template):
