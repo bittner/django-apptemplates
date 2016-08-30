@@ -16,7 +16,7 @@ Based on: http://djangosnippets.org/snippets/1376/
 .. |latest-version| image:: https://img.shields.io/pypi/v/django-apptemplates.svg
    :alt: Latest version on PyPI
    :target: https://pypi.python.org/pypi/django-apptemplates
-.. |build-status| image:: https://travis-ci.org/bittner/django-apptemplates.svg
+.. |build-status| image:: https://travis-ci.org/bittner/django-apptemplates.svg?branch=master
    :alt: Build status
    :target: https://travis-ci.org/bittner/django-apptemplates
 .. |python-support| image:: https://img.shields.io/pypi/pyversions/django-apptemplates.svg
@@ -32,7 +32,7 @@ Based on: http://djangosnippets.org/snippets/1376/
 Version Support
 ===============
 
-Python 2.6 through 3.5, and Django 1.4 through 1.9 are supported (verified by
+Python 2.6 through 3.5, and Django 1.4 and above are supported (verified by
 tests).
 
 Installation, Setup and Use
