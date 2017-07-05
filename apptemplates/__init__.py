@@ -68,5 +68,4 @@ class Loader(FilesystemLoader):
         template_dir = get_app_template_dir(app_name)
         if template_dir:
             return [get_template_path(template_dir, template_name)]
-        else:
-            return []
+        return []
