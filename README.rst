@@ -2,7 +2,7 @@
 Django apptemplates |latest-version|
 ====================================
 
-|build-status| |python-support| |downloads| |license|
+|build-status| |python-support| |license|
 
 django-apptemplates is a Django template loader that allows you to load a
 template from a specific application.  By this you can both extend and
@@ -22,9 +22,6 @@ Based on: http://djangosnippets.org/snippets/1376/
 .. |python-support| image:: https://img.shields.io/pypi/pyversions/django-apptemplates.svg
    :target: https://pypi.python.org/pypi/django-apptemplates
    :alt: Python versions
-.. |downloads| image:: https://img.shields.io/pypi/dm/django-apptemplates.svg
-   :alt: Monthly downloads from PyPI
-   :target: https://pypi.python.org/pypi/django-apptemplates
 .. |license| image:: https://img.shields.io/pypi/l/django-apptemplates.svg
    :alt: Software license
    :target: https://github.com/bittner/django-apptemplates/blob/master/LICENSE.txt
@@ -32,7 +29,7 @@ Based on: http://djangosnippets.org/snippets/1376/
 Version Support
 ===============
 
-Python 2.6 through 3.5, and Django 1.4 and above are supported (verified by
+Python 2.6 through 3.6, and Django 1.4 and above are supported (verified by
 tests).
 
 Installation, Setup and Use
@@ -110,6 +107,12 @@ Authors and Maintainers
 
 Change Log
 ==========
+
+1.3
+---
+
+* Add template loader to returned Origins
+* Also test against Python 3.6
 
 1.2
 ---
