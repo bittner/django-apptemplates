@@ -40,6 +40,7 @@ class Clean(TestCommand):
             '.eggs',
             '*.egg-info',
             '.tox',
+            '__pycache__',
         ]
         delete_everywhere = [
             '__pycache__',
