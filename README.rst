@@ -111,8 +111,8 @@ Change Log
 1.3
 ---
 
-* Add template loader to returned Origins
-* Also test against Python 3.6
+* Add template loader to returned Origins -- Thanks J.J., @jdotjdot!
+* Also test against Python 3.6 -- Thanks Justin Walgran, @jwalgran!
 
 1.2
 ---
