@@ -39,10 +39,13 @@ def get_app_template_dir(app_name):
 
 
 if django.VERSION >= (1, 9):
-    def get_template_path(template_dir, template_name,
-                          loader=None):  # pylint: disable=unused-argument
+    def get_template_path(template_dir, template_name, loader=None):
         """Return Origin object with template file path"""
-        return Origin(name=join(template_dir, template_name))
+        return Origin(
+            name=join(template_dir, template_name),
+            template_name=template_name,
+            loader=loader,
+        )
 else:
     def get_template_path(template_dir, template_name,
                           loader=None):  # pylint: disable=unused-argument
