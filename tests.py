@@ -1,12 +1,13 @@
 import django
 import pytest  # noqa
+
 from copy import deepcopy
 from django.conf import settings
 from django.template.base import Context, Template
 try:
-    from django.test import override_settings
-except ImportError:
     from django.test.utils import override_settings
+except ImportError:  # older Djangos
+    from django.test import override_settings
 
 
 cached_template_settings = {}
@@ -24,11 +25,17 @@ else:
 
 
 def test_import():
+    """
+    Importing this module should not fail.
+    """
     import apptemplates
     assert apptemplates.__name__ == 'apptemplates'
 
 
 def test_render():
+    """
+    Test-drive the apptemplate code base by rendering a template.
+    """
     c = Context()
     t = Template('{% extends "admin:admin/base.html" %}')
     t.render(c)
@@ -36,7 +43,9 @@ def test_render():
 
 @override_settings(**cached_template_settings)
 def test_cached():
-    "Test that the template still works when the cached loader is being used."
+    """
+    Test that the template still works when the cached loader is being used.
+    """
     c = Context()
     t = Template('{% extends "admin:admin/base.html" %}')
     t.render(c)
