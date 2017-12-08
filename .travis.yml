@@ -17,7 +17,21 @@ env:
   - DJANGO=1.10
   - DJANGO=1.11
   - DJANGO=2.0
-matrix:
+
+install: pip install "virtualenv<14.0.0" tox-travis
+script: python setup.py test
+
+stages:
+  - lint
+  - test
+
+jobs:
+  include:
+    - { stage: lint, python: 2.7, env: TOXENV=flake8 }
+    - { stage: lint, python: 3.6, env: TOXENV=flake8 }
+    - { stage: lint, python: 2.7, env: TOXENV=pylint }
+    - { stage: lint, python: 3.6, env: TOXENV=pylint }
+    - { stage: lint, python: 3.6, env: TOXENV=readme }
   exclude:
     # Python/Django combinations that aren't officially supported
     # Django 1.4/1.5 don't support Python 3
@@ -60,12 +74,3 @@ matrix:
     - { python: 2.7, env: DJANGO=2.0 }
     - { python: 3.2, env: DJANGO=2.0 }
     - { python: 3.3, env: DJANGO=2.0 }
-  include:
-    - { python: 2.7, env: TOXENV=flake8 }
-    - { python: 3.6, env: TOXENV=flake8 }
-    - { python: 2.7, env: TOXENV=pylint }
-    - { python: 3.6, env: TOXENV=pylint }
-    - { python: 3.6, env: TOXENV=readme }
-install:
-  - pip install "virtualenv<14.0.0" tox-travis
-script: python setup.py test
