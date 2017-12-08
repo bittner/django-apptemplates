@@ -65,6 +65,7 @@ matrix:
     - { python: 3.6, env: TOXENV=flake8 }
     - { python: 2.7, env: TOXENV=pylint }
     - { python: 3.6, env: TOXENV=pylint }
+    - { python: 3.6, env: TOXENV=readme }
 install:
   - pip install "virtualenv<14.0.0" tox-travis
 script: python setup.py test
