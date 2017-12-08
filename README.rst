@@ -16,7 +16,7 @@ Based on: http://djangosnippets.org/snippets/1376/
 .. |latest-version| image:: https://img.shields.io/pypi/v/django-apptemplates.svg
    :alt: Latest version on PyPI
    :target: https://pypi.python.org/pypi/django-apptemplates
-.. |build-status| image:: https://travis-ci.org/bittner/django-apptemplates.svg?branch=master
+.. |build-status| image:: https://img.shields.io/travis/bittner/django-apptemplates/master.svg
    :alt: Build status
    :target: https://travis-ci.org/bittner/django-apptemplates
 .. |python-support| image:: https://img.shields.io/pypi/pyversions/django-apptemplates.svg
@@ -29,8 +29,11 @@ Based on: http://djangosnippets.org/snippets/1376/
 Version Support
 ===============
 
-Python 2.6 through 3.6, and Django 1.4 and above are supported (verified by
-tests).
+django-apptemplates is `tested against`_ the officially supported combinations
+of Python and Django, since Django 1.4 (Django 1.4 to 2.0 on Python 2.6 to 3.6).
+
+
+.. _tested against: https://travis-ci.org/bittner/django-apptemplates
 
 Installation, Setup and Use
 ===========================
@@ -107,6 +110,13 @@ Authors and Maintainers
 
 Change Log
 ==========
+
+1.4
+---
+
+* Fix Origin missing loader and template_name attrs -- Thanks Brendan Roy,
+  @bmon, and Matthew Somerville, @dracos!
+* Also test against Django 2.0
 
 1.3
 ---
