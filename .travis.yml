@@ -19,7 +19,7 @@ env:
   - DJANGO=2.0
 
 install: pip install "virtualenv<14.0.0" tox-travis
-script: python setup.py test
+script: tox
 
 stages:
   - lint
