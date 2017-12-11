@@ -5,9 +5,9 @@ from copy import deepcopy
 from django.conf import settings
 from django.template.base import Context, Template
 try:
-    from django.test.utils import override_settings
-except ImportError:  # older Djangos
     from django.test import override_settings
+except ImportError:  # Django < 1.7
+    from django.test.utils import override_settings
 
 
 cached_template_settings = {}
