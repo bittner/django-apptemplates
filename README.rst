@@ -19,9 +19,9 @@ Based on: http://djangosnippets.org/snippets/1376/
 .. |build-status| image:: https://img.shields.io/travis/bittner/django-apptemplates/master.svg
    :alt: Build status
    :target: https://travis-ci.org/bittner/django-apptemplates
-.. |health| image:: https://landscape.io/github/bittner/django-apptemplates/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/bittner/django-apptemplates/master
-   :alt: Code Health
+.. |health| image:: https://img.shields.io/codacy/grade/a9be2f4c385545e381c3a317f52782c5/master.svg
+   :target: https://www.codacy.com/app/bittner/django-apptemplates
+   :alt: Code health
 .. |python-support| image:: https://img.shields.io/pypi/pyversions/django-apptemplates.svg
    :target: https://pypi.python.org/pypi/django-apptemplates
    :alt: Python versions
@@ -33,7 +33,7 @@ Version Support
 ===============
 
 django-apptemplates is `tested against`_ the officially supported combinations
-of Python and Django, since Django 1.4 (Django 1.4 to 2.0 on Python 2.6 to 3.6).
+of Python and Django, since Django 1.4 (Django 1.4 to 3.0 on Python 2.6 to 3.8).
 
 
 .. _tested against: https://travis-ci.org/bittner/django-apptemplates
