@@ -115,6 +115,12 @@ Authors and Maintainers
 Change Log
 ==========
 
+(unreleased)
+------------
+
+* Drop support for Django 1.7 (ImportError)
+* Drop support for Python 2.6, 3.2, 3.3 (not available on Travis CI)
+
 1.4
 ---
 
