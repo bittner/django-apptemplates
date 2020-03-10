@@ -1,12 +1,13 @@
+os: linux
+dist: xenial
 language: python
 python:
-  - 2.6
   - 2.7
-  - 3.2
-  - 3.3
   - 3.4
   - 3.5
   - 3.6
+  - 3.7
+  - 3.8
 env:
   - DJANGO=1.4
   - DJANGO=1.5
@@ -17,8 +18,11 @@ env:
   - DJANGO=1.10
   - DJANGO=1.11
   - DJANGO=2.0
+  - DJANGO=2.1
+  - DJANGO=2.2
+  - DJANGO=3.0
 
-install: pip install "virtualenv<14.0.0" tox-travis
+install: pip install virtualenv tox-travis
 script: tox
 
 stages:
@@ -27,50 +31,57 @@ stages:
 
 jobs:
   include:
-    - { stage: lint, python: 2.7, env: TOXENV=flake8 }
-    - { stage: lint, python: 3.6, env: TOXENV=flake8 }
-    - { stage: lint, python: 2.7, env: TOXENV=pylint }
-    - { stage: lint, python: 3.6, env: TOXENV=pylint }
-    - { stage: lint, python: 3.6, env: TOXENV=readme }
+    - { stage: lint, python: 3.7, env: TOXENV=flake8 }
+    - { stage: lint, python: 3.7, env: TOXENV=pylint }
+    - { stage: lint, python: 3.7, env: TOXENV=readme }
   exclude:
     # Python/Django combinations that aren't officially supported
     # Django 1.4/1.5 don't support Python 3
-    - { python: 3.2, env: DJANGO=1.4 }
-    - { python: 3.3, env: DJANGO=1.4 }
     - { python: 3.4, env: DJANGO=1.4 }
     - { python: 3.5, env: DJANGO=1.4 }
     - { python: 3.6, env: DJANGO=1.4 }
-    - { python: 3.2, env: DJANGO=1.5 }
-    - { python: 3.3, env: DJANGO=1.5 }
+    - { python: 3.7, env: DJANGO=1.4 }
+    - { python: 3.8, env: DJANGO=1.4 }
     - { python: 3.4, env: DJANGO=1.5 }
     - { python: 3.5, env: DJANGO=1.5 }
     - { python: 3.6, env: DJANGO=1.5 }
-    # Django 1.6 does not support 3.4-3.6
+    - { python: 3.7, env: DJANGO=1.5 }
+    - { python: 3.8, env: DJANGO=1.5 }
+    # Django 1.6 does not support 3.4+
     - { python: 3.4, env: DJANGO=1.6 }
     - { python: 3.5, env: DJANGO=1.6 }
     - { python: 3.6, env: DJANGO=1.6 }
-    # Django 1.7 does not support 2.6, 3.5-3.6
-    - { python: 2.6, env: DJANGO=1.7 }
+    - { python: 3.7, env: DJANGO=1.6 }
+    - { python: 3.8, env: DJANGO=1.6 }
+    # Django 1.7 does not support 3.5+
     - { python: 3.5, env: DJANGO=1.7 }
     - { python: 3.6, env: DJANGO=1.7 }
-    # Django 1.8 does not support 2.6, 3.6
-    - { python: 2.6, env: DJANGO=1.8 }
+    - { python: 3.7, env: DJANGO=1.7 }
+    - { python: 3.8, env: DJANGO=1.7 }
+    # Django 1.8 does not support 3.6+
     - { python: 3.6, env: DJANGO=1.8 }
-    # Django 1.9/1.10 do not support 2.6, 3.2-3.3, 3.6
-    - { python: 2.6, env: DJANGO=1.9 }
-    - { python: 3.2, env: DJANGO=1.9 }
-    - { python: 3.3, env: DJANGO=1.9 }
+    - { python: 3.7, env: DJANGO=1.8 }
+    - { python: 3.8, env: DJANGO=1.8 }
+    # Django 1.9/1.10 do not support 3.6+
     - { python: 3.6, env: DJANGO=1.9 }
-    - { python: 2.6, env: DJANGO=1.10 }
-    - { python: 3.2, env: DJANGO=1.10 }
-    - { python: 3.3, env: DJANGO=1.10 }
+    - { python: 3.7, env: DJANGO=1.9 }
+    - { python: 3.8, env: DJANGO=1.9 }
     - { python: 3.6, env: DJANGO=1.10 }
-    # Django 1.11 does not support 2.6, 3.2-3.3
-    - { python: 2.6, env: DJANGO=1.11 }
-    - { python: 3.2, env: DJANGO=1.11 }
-    - { python: 3.3, env: DJANGO=1.11 }
-    # Django 2.0 does not support Python 2, 3.2-3.3
-    - { python: 2.6, env: DJANGO=2.0 }
+    - { python: 3.7, env: DJANGO=1.10 }
+    - { python: 3.8, env: DJANGO=1.10 }
+    # Django 1.11 does not support 3.8+
+    - { python: 3.8, env: DJANGO=1.11 }
+    # Django 2.0 does not support Python 2, 3.8+
     - { python: 2.7, env: DJANGO=2.0 }
-    - { python: 3.2, env: DJANGO=2.0 }
-    - { python: 3.3, env: DJANGO=2.0 }
+    - { python: 3.8, env: DJANGO=2.0 }
+    # Django 2.1 does not support Python 2, 3.4, 3.8+
+    - { python: 2.7, env: DJANGO=2.1 }
+    - { python: 3.4, env: DJANGO=2.1 }
+    - { python: 3.8, env: DJANGO=2.1 }
+    # Django 2.2 does not support Python 2, 3.4
+    - { python: 2.7, env: DJANGO=2.2 }
+    - { python: 3.4, env: DJANGO=2.2 }
+    # Django 3.0 does not support Python 2, 3.4-3.5
+    - { python: 2.7, env: DJANGO=3.0 }
+    - { python: 3.4, env: DJANGO=3.0 }
+    - { python: 3.5, env: DJANGO=3.0 }

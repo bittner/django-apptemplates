@@ -59,6 +59,7 @@ class Loader(FilesystemLoader):
     """
     is_usable = True
 
+    # pylint: disable=arguments-differ,unused-argument
     def get_template_sources(self, template_name, template_dirs=None):
         """
         Return the absolute paths to "template_name" in the specified app
