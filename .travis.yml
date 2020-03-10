@@ -12,7 +12,6 @@ env:
   - DJANGO=1.4
   - DJANGO=1.5
   - DJANGO=1.6
-  - DJANGO=1.7
   - DJANGO=1.8
   - DJANGO=1.9
   - DJANGO=1.10
@@ -53,11 +52,6 @@ jobs:
     - { python: 3.6, env: DJANGO=1.6 }
     - { python: 3.7, env: DJANGO=1.6 }
     - { python: 3.8, env: DJANGO=1.6 }
-    # Django 1.7 does not support 3.5+
-    - { python: 3.5, env: DJANGO=1.7 }
-    - { python: 3.6, env: DJANGO=1.7 }
-    - { python: 3.7, env: DJANGO=1.7 }
-    - { python: 3.8, env: DJANGO=1.7 }
     # Django 1.8 does not support 3.6+
     - { python: 3.6, env: DJANGO=1.8 }
     - { python: 3.7, env: DJANGO=1.8 }
