@@ -2,7 +2,7 @@
 from os.path import dirname, join
 from setuptools import setup, find_packages
 
-version = '1.4'
+version = '1.5'
 
 
 def read_file(filename):
@@ -34,10 +34,7 @@ setup(name='django-apptemplates',
           'Intended Audience :: Developers',
           'License :: OSI Approved :: MIT License',
           'Operating System :: OS Independent',
-          'Programming Language :: Python :: 2.6',
           'Programming Language :: Python :: 2.7',
-          'Programming Language :: Python :: 3.2',
-          'Programming Language :: Python :: 3.3',
           'Programming Language :: Python :: 3.4',
           'Programming Language :: Python :: 3.5',
           'Programming Language :: Python :: 3.6',
@@ -57,5 +54,5 @@ setup(name='django-apptemplates',
       license='MIT',
       include_package_data=True,
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
-      tests_require=['tox', 'virtualenv<14.0.0'],
+      tests_require=['tox'],
       zip_safe=False)
