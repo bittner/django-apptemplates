@@ -1,5 +1,6 @@
 os: linux
 dist: xenial
+
 language: python
 python:
   - 2.7
@@ -8,7 +9,8 @@ python:
   - 3.6
   - 3.7
   - 3.8
-env:
+
+  env:
   - DJANGO=1.4
   - DJANGO=1.5
   - DJANGO=1.6
@@ -21,7 +23,7 @@ env:
   - DJANGO=2.2
   - DJANGO=3.0
 
-install: pip install virtualenv tox-travis
+install: pip install tox-travis
 script: tox
 
 stages:
